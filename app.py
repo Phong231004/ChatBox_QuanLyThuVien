@@ -4,7 +4,7 @@ import json
 import random
 import requests
 import socket
-
+import os
 # ⚠️ FIX DNS + timeout
 socket.setdefaulttimeout(30)
 
@@ -13,7 +13,7 @@ app = FastAPI()
 # ================= HUGGINGFACE API =================
 API_URL = "https://api-inference.huggingface.co/models/ThanhPhong123/QuanLyThuVien-ChatBox"
 HEADERS = {
-    "Authorization": "Bearer YOUR_NEW_TOKEN_HERE"
+    "Authorization": f"Bearer {os.getenv('HF_TOKEN')}"
 }
 
 # ================= LOAD FILE =================
