@@ -5,101 +5,93 @@ import random
 import requests
 import socket
 import os
-# ⚠️ FIX DNS + timeout
+import time
 socket.setdefaulttimeout(30)
-
 app = FastAPI()
-
-# ================= HUGGINGFACE API =================
 API_URL = "https://api-inference.huggingface.co/models/ThanhPhong123/QuanLyThuVien-ChatBox"
-HEADERS = {
-    "Authorization": f"Bearer {os.getenv('HF_TOKEN')}"
-}
 
-# ================= LOAD FILE =================
+HF_TOKEN = os.getenv("HF_TOKEN")
+if not HF_TOKEN:
+    print("WARNING: HF_TOKEN is missing!")
+
+HEADERS = {
+    "Authorization": f"Bearer {HF_TOKEN}"
+}
 with open("responses.json", "r", encoding="utf-8") as f:
     responses = json.load(f)
 
 with open("label_map.json", "r", encoding="utf-8") as f:
     label_map = json.load(f)
 
-# đảo map: id -> intent
 label_map = {v: k for k, v in label_map.items()}
-
-# ================= CORS =================
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# ================= FALLBACK (khi API chết) =================
 def fallback_intent(text):
     text = text.lower()
-
-    if "mở cửa" in text:
-        return "gio_mo_cua"
-    if "mượn sách" in text:
-        return "sach_dang_muon"
-    if "lịch sử" in text:
-        return "lich_su_muon"
-
-    return "unknown"
-
-# ================= PREDICT =================
+    return "Cho mình xin lỗi nhé, hiện tại sever đang bị sự cố"
 def predict(text):
     try:
-        response = requests.post(
-            API_URL,
-            headers=HEADERS,
-            json={"inputs": text},
-            timeout=10
-        )
+        for attempt in range(3):
+            print(f"\nCall API (attempt {attempt+1})")
 
-        print("STATUS:", response.status_code)
-        print("RAW:", response.text)
+            response = requests.post(
+                API_URL,
+                headers=HEADERS,
+                json={"inputs": text},
+                timeout=20
+            )
 
-        if response.status_code != 200:
-            return fallback_intent(text)
+            print("STATUS:", response.status_code)
+            print("RAW:", response.text)
+            if response.status_code != 200:
+                print("HTTP ERROR → fallback")
+                return fallback_intent(text)
 
-        data = response.json()
+            data = response.json()
+            if isinstance(data, dict) and "error" in data:
+                error_msg = data["error"].lower()
 
-        if isinstance(data, dict) and "error" in data:
-            return fallback_intent(text)
+                if "loading" in error_msg:
+                    print("⏳ Model loading... đợi 5s")
+                    time.sleep(5)
+                    continue 
 
-        if not isinstance(data, list) or len(data) == 0:
-            return fallback_intent(text)
+                print("API ERROR:", data["error"])
+                return fallback_intent(text)
+            if not isinstance(data, list) or len(data) == 0:
+                print("INVALID DATA → fallback")
+                return fallback_intent(text)
+            best = max(data[0], key=lambda x: x["score"])
+            label = best["label"]
 
-        best = max(data[0], key=lambda x: x["score"])
-        label = best["label"]
+            print("PREDICT:", label)
 
-        if "LABEL_" in label:
-            idx = int(label.split("_")[1])
-            return label_map.get(idx, fallback_intent(text))
-        else:
+            if "LABEL_" in label:
+                idx = int(label.split("_")[1])
+                return label_map.get(idx, fallback_intent(text))
+
             return label
+        print("FAIL SAU 3 LẦN → fallback")
+        return fallback_intent(text)
 
     except Exception as e:
-        print("ERROR:", e)
-        return fallback_intent(text)  # 👈 QUAN TRỌNG
-
-# ================= RESPONSE =================
+        print("EXCEPTION:", e)
+        return fallback_intent(text)
 def get_response(intent):
     if intent in responses:
         res = responses[intent]
 
-        # nếu là string → trả luôn
         if isinstance(res, str):
             return res
 
-        # nếu là list → random
         if isinstance(res, list):
             return random.choice(res)
 
     return "Tôi chưa hiểu câu hỏi, bạn có thể nói rõ hơn không?"
-
-# ================= API =================
 @app.get("/")
 def home():
     return {"status": "OK"}
