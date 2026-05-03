@@ -1,0 +1,103 @@
+{
+  "gio_mo_cua": "Thư viện mở cửa từ 8h đến 17h từ thứ 2 đến thứ 6.",
+  "gio_dong_cua": "Thư viện đóng cửa lúc 17h mỗi ngày làm việc.",
+  "lich_lam_viec": "Thư viện làm việc từ thứ 2 đến thứ 6, 8h đến 17h.",
+  "mo_cua_cuoi_tuan": "Thư viện có thể mở cửa sáng thứ 7, vui lòng kiểm tra thông báo.",
+  "mo_cua_ngay_le": "Thư viện thường đóng cửa vào các ngày lễ.",
+
+  "muon_sach": "Bạn có thể mượn sách tại quầy hoặc qua hệ thống online.",
+  "so_luong_muon": "Bạn được mượn tối đa 5 cuốn sách.",
+  "thoi_gian_muon": "Thời gian mượn sách là 14 ngày.",
+  "gia_han_sach": "Bạn có thể gia hạn sách nếu chưa quá hạn.",
+  "cach_muon_sach": "Bạn chọn sách và mang đến quầy để làm thủ tục mượn.",
+
+  "tra_sach": "Bạn có thể trả sách tại quầy thư viện.",
+  "han_tra_sach": "Hạn trả sách được ghi trên phiếu mượn.",
+  "tra_sach_muon": "Nếu trả trễ, bạn sẽ bị tính phí phạt.",
+  "dia_diem_tra_sach": "Bạn trả sách tại quầy tiếp nhận của thư viện.",
+  "quy_trinh_tra_sach": "Bạn đưa sách cho nhân viên để hoàn tất trả.",
+
+  "phat_tre": "Phí trễ hạn là 2000đ mỗi ngày mỗi cuốn.",
+  "cach_tinh_phat": "Phí phạt được tính theo số ngày trễ.",
+  "mien_phat": "Một số trường hợp đặc biệt có thể được miễn phí phạt.",
+  "dong_phat": "Bạn có thể đóng phí phạt tại quầy.",
+  "phat_mat_sach": "Nếu mất sách, bạn cần bồi thường theo giá trị sách.",
+
+  "tim_sach": "Bạn có thể tìm sách bằng chức năng tìm kiếm.",
+  "tim_theo_ten": "Nhập tên sách để tìm kiếm.",
+  "tim_theo_tac_gia": "Bạn có thể tìm theo tên tác giả.",
+  "tim_theo_the_loai": "Bạn có thể lọc theo thể loại sách.",
+  "tim_sach_online": "Bạn có thể tìm sách trên hệ thống online.",
+
+  "sach_con_khong": "Bạn có thể kiểm tra tình trạng sách trên hệ thống.",
+  "kiem_tra_tinh_trang": "Hệ thống sẽ hiển thị sách còn hay đã hết.",
+  "dat_truoc_sach": "Bạn có thể đặt trước nếu sách đang hết.",
+  "huy_dat_sach": "Bạn có thể hủy đặt sách trong tài khoản.",
+  "thoi_gian_giu_sach": "Sách đặt trước được giữ trong 2 ngày.",
+
+  "dang_ky_tai_khoan": "Bạn đăng ký tài khoản tại quầy hoặc online.",
+  "dang_nhap": "Bạn đăng nhập bằng tài khoản đã đăng ký.",
+  "quen_mat_khau": "Bạn có thể đặt lại mật khẩu qua email.",
+  "doi_mat_khau": "Bạn đổi mật khẩu trong phần cài đặt.",
+  "cap_nhat_thong_tin": "Bạn có thể cập nhật thông tin cá nhân.",
+
+  "the_thu_vien": "Thẻ thư viện dùng để mượn sách.",
+  "lam_the": "Bạn cần CCCD để làm thẻ.",
+  "mat_the": "Bạn cần báo mất và làm lại thẻ.",
+  "gia_han_the": "Thẻ có thể gia hạn khi hết hạn.",
+  "phi_lam_the": "Phí làm thẻ là 50.000đ.",
+
+  "noi_quy": "Vui lòng tuân thủ nội quy thư viện.",
+  "quy_dinh_muon": "Bạn cần có thẻ để mượn sách.",
+  "quy_dinh_tra": "Bạn phải trả sách đúng hạn.",
+  "quy_dinh_phat": "Có phí phạt nếu vi phạm quy định.",
+  "quy_dinh_su_dung": "Không gây ồn ào trong thư viện.",
+
+  "khu_vuc_doc": "Thư viện có khu vực đọc sách yên tĩnh.",
+  "phong_doc": "Bạn có thể sử dụng phòng đọc miễn phí.",
+  "phong_hoc_nhom": "Có phòng học nhóm cho sinh viên.",
+  "dat_phong": "Bạn có thể đặt phòng trước.",
+  "thoi_gian_su_dung_phong": "Thời gian sử dụng phòng tối đa 2 giờ.",
+
+  "wifi": "Thư viện cung cấp wifi miễn phí.",
+  "may_tinh": "Có máy tính cho bạn sử dụng.",
+  "in_an": "Có dịch vụ in ấn tại thư viện.",
+  "scan_tai_lieu": "Bạn có thể scan tài liệu.",
+  "su_dung_thiet_bi": "Vui lòng sử dụng thiết bị đúng cách.",
+
+  "sach_moi": "Thư viện thường xuyên cập nhật sách mới.",
+  "de_xuat_sach": "Bạn có thể đề xuất sách mới.",
+  "danh_sach_sach": "Bạn xem danh sách sách trên hệ thống.",
+  "top_sach": "Có danh sách sách phổ biến.",
+  "sach_theo_chu_de": "Bạn có thể tìm sách theo chủ đề.",
+
+  "tai_lieu_dien_tu": "Thư viện cung cấp tài liệu điện tử.",
+  "ebook": "Bạn có thể đọc ebook online.",
+  "tai_sach_online": "Bạn có thể tải sách nếu được phép.",
+  "doc_sach_online": "Bạn đọc sách trực tiếp trên web.",
+  "tai_khoan_online": "Bạn cần tài khoản để truy cập.",
+
+  "ho_tro": "Bạn có thể liên hệ để được hỗ trợ.",
+  "lien_he": "Liên hệ qua email hoặc điện thoại.",
+  "phan_hoi": "Bạn có thể gửi phản hồi.",
+  "khieu_nai": "Bạn có thể gửi khiếu nại.",
+  "huong_dan_su_dung": "Có hướng dẫn sử dụng hệ thống.",
+
+  "su_kien": "Thư viện tổ chức nhiều sự kiện.",
+  "hoi_thao": "Có các buổi hội thảo.",
+  "lop_hoc": "Có lớp học miễn phí.",
+  "dang_ky_su_kien": "Bạn có thể đăng ký tham gia.",
+  "lich_su_kien": "Bạn xem lịch sự kiện.",
+
+  "nhan_vien": "Nhân viên luôn sẵn sàng hỗ trợ.",
+  "gioi_thieu": "Thư viện phục vụ sinh viên và người đọc.",
+  "dia_chi": "Thư viện nằm tại trung tâm thành phố.",
+  "ban_do": "Bạn có thể xem bản đồ trên website.",
+  "chi_duong": "Bạn có thể dùng Google Maps để tìm đường.",
+
+  "lich_su_muon": "Bạn có thể xem lịch sử mượn.",
+  "sach_dang_muon": "Hiển thị sách bạn đang mượn.",
+  "nhac_nho_tra": "Hệ thống sẽ nhắc bạn trả sách.",
+  "thong_bao": "Bạn sẽ nhận thông báo từ hệ thống.",
+  "cap_nhat_he_thong": "Hệ thống đang được cập nhật định kỳ."
+}
