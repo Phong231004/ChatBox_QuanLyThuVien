@@ -32,7 +32,18 @@ app.add_middleware(
 )
 def fallback_intent(text):
     text = text.lower()
-    return "Cho mình xin lỗi nhé, hiện tại sever đang bị sự cố"
+
+    if "mở cửa" in text or "đóng cửa" in text:
+        return "gio_mo_cua"
+
+    if "mượn sách" in text:
+        return "sach_dang_muon"
+
+    if "lịch sử" in text:
+        return "lich_su_muon"
+
+    return "unknown" 
+
 def predict(text):
     try:
         for attempt in range(3):

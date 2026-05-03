@@ -99,5 +99,10 @@
   "sach_dang_muon": "Hiển thị sách bạn đang mượn.",
   "nhac_nho_tra": "Hệ thống sẽ nhắc bạn trả sách.",
   "thong_bao": "Bạn sẽ nhận thông báo từ hệ thống.",
-  "cap_nhat_he_thong": "Hệ thống đang được cập nhật định kỳ."
+  "cap_nhat_he_thong": "Hệ thống đang được cập nhật định kỳ.",
+  "unknown": [
+    "Cho mình xin lỗi nhé, hiện tại server đang bị sự cố",
+    "Mình chưa hiểu câu hỏi, bạn thử lại nhé",
+    "Hiện tại hệ thống đang lỗi nhẹ "
+  ]
 }
